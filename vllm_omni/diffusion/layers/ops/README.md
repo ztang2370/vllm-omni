@@ -106,18 +106,6 @@ Sources: [SANA #6823 implementation](https://github.com/vllm-project/vllm-omni/b
 The shared helper falls back for H3's mixed dtypes and SANA's transposed
 activations. Each consumer still needs its own adoption and validation.
 
-## Qualification status (RFC #7382)
-
-| Consumer | Configuration | Status / evidence |
-| --- | --- | --- |
-| Gated residual, operator level | A100-SXM4-40GB; synthetic tensors, no model weights; FP16/BF16; CPU + CUDA suites; compile coverage; benchmark with correctness check | 87 operator tests pass on A100 (this PR), reproduced on H200: exact forward/backward comparisons, deterministic rounding regressions, compile, strided gates, fused/fallback dispatch |
-| Wan2.2 | FP16/BF16; existing `(2,257,4096)` tests with global/per-batch/per-token gates; `(2,17,128)` gapped-gate/compile fixtures; capture the model's actual shapes/dtypes | Pending adoption and model-level qualification |
-| HunyuanVideo 1.5 | FP16/BF16; same fixtures; capture the model's actual shapes/dtypes | Pending adoption and model-level qualification |
-
-Remaining gaps: Wan2.2 and HunyuanVideo 1.5 adoption, actual-path assertions
-in both models, and the repeated two-model A/B (microbenchmark plus
-production traces). The validation runs stay with their current owners.
-
 ### Validation
 
 The [operator tests](../../../../tests/diffusion/layers/test_gated_residual.py)
