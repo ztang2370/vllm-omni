@@ -20,20 +20,18 @@ LTX-2 adoption is a separate follow-up under
 
 ### Contract
 
+The contract follows the five categories of
+[RFC #7382 §3](https://github.com/vllm-project/vllm-omni/issues/7382#user-content-integration-rules).
+
+#### 1. Tensor and numerical behavior
+
 - `residual` and `branch` are floating-point tensors with the same non-scalar
   shape. The last dimension is the hidden dimension.
 - `gate` is floating-point and broadcasts to that shape without expanding it.
   Scalar gates are valid.
 - The output has the residual shape and follows PyTorch dtype promotion.
   Inputs are not mutated, and the output does not alias them.
-- Invalid activation shapes or gate broadcasting raise `ValueError`;
-  non-floating-point tensors raise `TypeError`. Other arithmetic errors follow
-  the native expression. CUDA launch errors propagate.
-
-The CUDA fast path requires Triton on NVIDIA CUDA, matching FP16/BF16 input
-dtypes and devices, contiguous activations, and hidden size 1 through 16384.
-The gate's last dimension must match the hidden size and have stride 1.
-For activations shaped `[B, S, C]`, supported gates include:
+- For activations shaped `[B, S, C]`, supported gates include:
 
 | Layout | Shape | Meaning |
 | --- | --- | --- |
@@ -41,22 +39,53 @@ For activations shaped `[B, S, C]`, supported gates include:
 | Per batch item | `[B, 1, C]` | One channel vector per batch item |
 | Per token | `[B, S, C]` | One channel vector per token |
 
-Higher-rank activations flatten the intervening token dimensions into rows.
-Per-token gates need a constant row stride. Gapped `chunk` and `unbind` views
-are supported when these conditions hold, without copying the gate.
-Valid inputs outside this subset use `residual + branch * gate`, including
-mixed dtypes, scalar gates, general broadcasting, and noncontiguous activations.
+- The kernel rounds the product to FP16/BF16 before adding the residual, then
+  rounds the output, matching eager PyTorch. The intermediate cast and Triton
+  launch option `enable_fp_fusion=False` preserve these two rounding points.
 
-The kernel rounds the product to FP16/BF16 before adding the residual, then
-rounds the output, matching eager PyTorch. The intermediate cast and Triton
-launch option `enable_fp_fusion=False` preserve these two rounding points.
+#### 2. Execution behavior
 
-When grad is enabled and any input requires gradients, the public helper uses
-the native expression so autograd records both operations. `torch.no_grad()`
-and `torch.inference_mode()` can still use fusion with such inputs.
-The internal custom op and fake implementation support `torch.compile` for
-inference. The custom op has no backward registration; use the public helper
-for the gradient fallback.
+- Supported accelerated variant: the CUDA fast path requires Triton on NVIDIA
+  CUDA, matching FP16/BF16 input dtypes and devices, contiguous activations,
+  and hidden size 1 through 16384. The gate's last dimension must match the
+  hidden size and have stride 1. Higher-rank activations flatten the
+  intervening token dimensions into rows. Per-token gates need a constant row
+  stride. Gapped `chunk` and `unbind` views are supported when these
+  conditions hold, without copying the gate.
+- Dispatch: when grad is enabled and any input requires gradients, the public
+  helper uses the native expression so autograd records both operations.
+  `torch.no_grad()` and `torch.inference_mode()` can still use fusion with
+  such inputs.
+- Compile/graph modes: the internal custom op and fake implementation support
+  `torch.compile` for inference. The custom op has no backward registration;
+  use the public helper for the gradient fallback.
+- Relocation preserves behavior: this module carries forward
+  [PR #6387](https://github.com/vllm-project/vllm-omni/pull/6387) with the
+  original authorship, changing only the two review findings.
+
+#### 3. Reference and errors
+
+- Valid inputs outside the fast-path subset use `residual + branch * gate`,
+  including mixed dtypes, scalar gates, general broadcasting, and
+  noncontiguous activations.
+- Invalid activation shapes or gate broadcasting raise `ValueError`;
+  non-floating-point tensors raise `TypeError`. Other arithmetic errors follow
+  the native expression. CUDA launch errors propagate.
+
+#### 4. Public API
+
+- `gated_residual(residual, branch, gate)` is the public import from
+  `vllm_omni.diffusion.layers.ops` (see above).
+- The canonical module is the sole custom-op registration owner; no public
+  support query is added yet.
+
+#### 5. Adoption
+
+- No model has adopted the shared op yet (model call sites are unchanged).
+  Wan2.2 and HunyuanVideo 1.5 adoption and model qualification are pending;
+  LTX-2 adoption is a separate follow-up under RFC #7382.
+- SANA and MiniMax-H3 VAE retain their own implementations and qualification;
+  see Related variants below.
 
 ### Related variants
 
