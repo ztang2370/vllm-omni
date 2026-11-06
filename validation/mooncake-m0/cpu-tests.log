@@ -1,0 +1,13 @@
+Running 24 items in this shard
+........................                                                 [100%]
+=============================== warnings summary ===============================
+vllm_omni/version.py:55
+  <checkout>/vllm_omni/version.py:55: RuntimeWarning: vLLM and vLLM-Omni appear to have mismatched major/minor versions:
+   --> vLLM-Omni version 0.1.dev4109+g6e8c1097c
+   --> vLLM version 0.33.0
+  This will likely cause compatibility issues.
+    warn_if_misaligned_vllm_version()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--- Running Summary
+24 passed, 1 warning in 0.19s

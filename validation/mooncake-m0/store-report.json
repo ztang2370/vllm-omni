@@ -1,0 +1,23 @@
+{
+  "packages": {
+    "mooncake-transfer-engine-cuda13": "0.3.12.post1"
+  },
+  "protocol": "tcp",
+  "master": "127.0.0.1:51051",
+  "buffer_bytes": 65536,
+  "roundtrip_exact": true,
+  "put_result": 0,
+  "read_bytes": 65536,
+  "missing_result": -704,
+  "missing_object_result": "b''",
+  "short_object_read_bytes": 32768,
+  "undersized_buffer_result": -600,
+  "removed_after_lookup_result": -704,
+  "duplicate_put_result": 0,
+  "duplicate_kept_original": true,
+  "concurrent_put_results": [
+    0,
+    0
+  ],
+  "concurrent_value_complete": true
+}

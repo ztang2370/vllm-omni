@@ -1,0 +1,61 @@
+{"event": "initialized", "real_hs": true, "request_id": null, "runner_v2": true, "time_ns": 2577631761739924}
+{"computed_tokens": 0, "event": "lookup", "kv_tokens": 0, "mode": "fill", "request_id": "m0-cold-9f5d3d00", "selected_tokens": 0, "time_ns": 2577631775402113}
+{"computed_tokens": 0, "event": "scheduled", "load_state": null, "request_id": "m0-cold-9f5d3d00", "scheduled_tokens": 513, "time_ns": 2577631777014819}
+{"computed_tokens": 513, "event": "scheduled", "load_state": null, "request_id": "m0-cold-9f5d3d00", "scheduled_tokens": 1, "time_ns": 2577633223910707}
+{"computed_tokens": 514, "event": "scheduled", "load_state": null, "request_id": "m0-cold-9f5d3d00", "scheduled_tokens": 1, "time_ns": 2577634231420784}
+{"computed_tokens": 515, "event": "scheduled", "load_state": null, "request_id": "m0-cold-9f5d3d00", "scheduled_tokens": 1, "time_ns": 2577634288056498}
+{"computed_tokens": 516, "event": "scheduled", "load_state": null, "request_id": "m0-cold-9f5d3d00", "scheduled_tokens": 1, "time_ns": 2577634344352221}
+{"computed_tokens": 517, "event": "scheduled", "load_state": null, "request_id": "m0-cold-9f5d3d00", "scheduled_tokens": 1, "time_ns": 2577634400492342}
+{"computed_tokens": 518, "event": "scheduled", "load_state": null, "request_id": "m0-cold-9f5d3d00", "scheduled_tokens": 1, "time_ns": 2577634456441774}
+{"computed_tokens": 519, "event": "scheduled", "load_state": null, "request_id": "m0-cold-9f5d3d00", "scheduled_tokens": 1, "time_ns": 2577634513155265}
+{"computed_tokens": 0, "event": "lookup_bypassed", "mode": "baseline", "request_id": "m0-baseline-8e6baf5f", "time_ns": 2577634579894859}
+{"computed_tokens": 0, "event": "scheduled", "load_state": null, "request_id": "m0-baseline-8e6baf5f", "scheduled_tokens": 513, "time_ns": 2577634580940216}
+{"computed_tokens": 513, "event": "scheduled", "load_state": null, "request_id": "m0-baseline-8e6baf5f", "scheduled_tokens": 1, "time_ns": 2577634638791939}
+{"computed_tokens": 514, "event": "scheduled", "load_state": null, "request_id": "m0-baseline-8e6baf5f", "scheduled_tokens": 1, "time_ns": 2577634694960754}
+{"computed_tokens": 515, "event": "scheduled", "load_state": null, "request_id": "m0-baseline-8e6baf5f", "scheduled_tokens": 1, "time_ns": 2577634750726911}
+{"computed_tokens": 516, "event": "scheduled", "load_state": null, "request_id": "m0-baseline-8e6baf5f", "scheduled_tokens": 1, "time_ns": 2577634806230093}
+{"computed_tokens": 517, "event": "scheduled", "load_state": null, "request_id": "m0-baseline-8e6baf5f", "scheduled_tokens": 1, "time_ns": 2577634862111116}
+{"computed_tokens": 518, "event": "scheduled", "load_state": null, "request_id": "m0-baseline-8e6baf5f", "scheduled_tokens": 1, "time_ns": 2577634918049858}
+{"computed_tokens": 519, "event": "scheduled", "load_state": null, "request_id": "m0-baseline-8e6baf5f", "scheduled_tokens": 1, "time_ns": 2577634973551718}
+{"computed_tokens": 0, "event": "lookup", "kv_tokens": 512, "mode": "hit", "request_id": "m0-hit-aff2cc13", "selected_tokens": 512, "time_ns": 2577635042566354}
+{"event": "completion_received", "load_state": "ready", "request_id": "m0-hit-aff2cc13", "time_ns": 2577635309704077}
+{"computed_tokens": 512, "event": "scheduled", "load_state": "ready", "request_id": "m0-hit-aff2cc13", "scheduled_tokens": 1, "time_ns": 2577635311161721}
+{"computed_tokens": 513, "event": "scheduled", "load_state": "ready", "request_id": "m0-hit-aff2cc13", "scheduled_tokens": 1, "time_ns": 2577635368659147}
+{"computed_tokens": 514, "event": "scheduled", "load_state": "ready", "request_id": "m0-hit-aff2cc13", "scheduled_tokens": 1, "time_ns": 2577635424835607}
+{"computed_tokens": 515, "event": "scheduled", "load_state": "ready", "request_id": "m0-hit-aff2cc13", "scheduled_tokens": 1, "time_ns": 2577635480188836}
+{"computed_tokens": 516, "event": "scheduled", "load_state": "ready", "request_id": "m0-hit-aff2cc13", "scheduled_tokens": 1, "time_ns": 2577635534774591}
+{"computed_tokens": 517, "event": "scheduled", "load_state": "ready", "request_id": "m0-hit-aff2cc13", "scheduled_tokens": 1, "time_ns": 2577635595054746}
+{"computed_tokens": 518, "event": "scheduled", "load_state": "ready", "request_id": "m0-hit-aff2cc13", "scheduled_tokens": 1, "time_ns": 2577635651620087}
+{"computed_tokens": 519, "event": "scheduled", "load_state": "ready", "request_id": "m0-hit-aff2cc13", "scheduled_tokens": 1, "time_ns": 2577635707110605}
+{"computed_tokens": 0, "event": "lookup", "kv_tokens": 512, "mode": "partial", "request_id": "m0-partial-970dde7d", "selected_tokens": 256, "time_ns": 2577635773884373}
+{"event": "completion_received", "load_state": "ready", "request_id": "m0-partial-970dde7d", "time_ns": 2577635914021364}
+{"computed_tokens": 256, "event": "scheduled", "load_state": "ready", "request_id": "m0-partial-970dde7d", "scheduled_tokens": 257, "time_ns": 2577635915275796}
+{"computed_tokens": 513, "event": "scheduled", "load_state": "ready", "request_id": "m0-partial-970dde7d", "scheduled_tokens": 1, "time_ns": 2577636874792146}
+{"computed_tokens": 514, "event": "scheduled", "load_state": "ready", "request_id": "m0-partial-970dde7d", "scheduled_tokens": 1, "time_ns": 2577636930846346}
+{"computed_tokens": 515, "event": "scheduled", "load_state": "ready", "request_id": "m0-partial-970dde7d", "scheduled_tokens": 1, "time_ns": 2577636986336142}
+{"computed_tokens": 516, "event": "scheduled", "load_state": "ready", "request_id": "m0-partial-970dde7d", "scheduled_tokens": 1, "time_ns": 2577637041641031}
+{"computed_tokens": 517, "event": "scheduled", "load_state": "ready", "request_id": "m0-partial-970dde7d", "scheduled_tokens": 1, "time_ns": 2577637096998178}
+{"computed_tokens": 518, "event": "scheduled", "load_state": "ready", "request_id": "m0-partial-970dde7d", "scheduled_tokens": 1, "time_ns": 2577637151915547}
+{"computed_tokens": 519, "event": "scheduled", "load_state": "ready", "request_id": "m0-partial-970dde7d", "scheduled_tokens": 1, "time_ns": 2577637206803962}
+{"computed_tokens": 0, "event": "lookup", "kv_tokens": 512, "mode": "delay", "request_id": "m0-delay-ac7a1afe", "selected_tokens": 512, "time_ns": 2577637272610570}
+{"event": "completion_received", "load_state": "ready", "request_id": "m0-delay-ac7a1afe", "time_ns": 2577637842153335}
+{"computed_tokens": 512, "event": "scheduled", "load_state": "ready", "request_id": "m0-delay-ac7a1afe", "scheduled_tokens": 1, "time_ns": 2577637843378571}
+{"computed_tokens": 513, "event": "scheduled", "load_state": "ready", "request_id": "m0-delay-ac7a1afe", "scheduled_tokens": 1, "time_ns": 2577637901122612}
+{"computed_tokens": 514, "event": "scheduled", "load_state": "ready", "request_id": "m0-delay-ac7a1afe", "scheduled_tokens": 1, "time_ns": 2577637956271817}
+{"computed_tokens": 515, "event": "scheduled", "load_state": "ready", "request_id": "m0-delay-ac7a1afe", "scheduled_tokens": 1, "time_ns": 2577638011638853}
+{"computed_tokens": 516, "event": "scheduled", "load_state": "ready", "request_id": "m0-delay-ac7a1afe", "scheduled_tokens": 1, "time_ns": 2577638066585467}
+{"computed_tokens": 517, "event": "scheduled", "load_state": "ready", "request_id": "m0-delay-ac7a1afe", "scheduled_tokens": 1, "time_ns": 2577638121106741}
+{"computed_tokens": 518, "event": "scheduled", "load_state": "ready", "request_id": "m0-delay-ac7a1afe", "scheduled_tokens": 1, "time_ns": 2577638175799066}
+{"computed_tokens": 519, "event": "scheduled", "load_state": "ready", "request_id": "m0-delay-ac7a1afe", "scheduled_tokens": 1, "time_ns": 2577638230672002}
+{"computed_tokens": 0, "event": "lookup", "kv_tokens": 512, "mode": "fail", "request_id": "m0-failure-96b7bc78", "selected_tokens": 512, "time_ns": 2577638296799884}
+{"event": "failure_received", "request_id": "m0-failure-96b7bc78", "time_ns": 2577638560769764}
+{"event": "completion_received", "load_state": "failed", "request_id": "m0-failure-96b7bc78", "time_ns": 2577638562048110}
+{"computed_tokens": 0, "event": "lookup_bypassed", "mode": "fail", "request_id": "m0-failure-96b7bc78", "time_ns": 2577638563400917}
+{"computed_tokens": 0, "event": "scheduled", "load_state": "failed", "request_id": "m0-failure-96b7bc78", "scheduled_tokens": 513, "time_ns": 2577638564868921}
+{"computed_tokens": 513, "event": "scheduled", "load_state": "failed", "request_id": "m0-failure-96b7bc78", "scheduled_tokens": 1, "time_ns": 2577638622654088}
+{"computed_tokens": 514, "event": "scheduled", "load_state": "failed", "request_id": "m0-failure-96b7bc78", "scheduled_tokens": 1, "time_ns": 2577638678122114}
+{"computed_tokens": 515, "event": "scheduled", "load_state": "failed", "request_id": "m0-failure-96b7bc78", "scheduled_tokens": 1, "time_ns": 2577638733707130}
+{"computed_tokens": 516, "event": "scheduled", "load_state": "failed", "request_id": "m0-failure-96b7bc78", "scheduled_tokens": 1, "time_ns": 2577638788651801}
+{"computed_tokens": 517, "event": "scheduled", "load_state": "failed", "request_id": "m0-failure-96b7bc78", "scheduled_tokens": 1, "time_ns": 2577638844267114}
+{"computed_tokens": 518, "event": "scheduled", "load_state": "failed", "request_id": "m0-failure-96b7bc78", "scheduled_tokens": 1, "time_ns": 2577638899160077}
+{"computed_tokens": 519, "event": "scheduled", "load_state": "failed", "request_id": "m0-failure-96b7bc78", "scheduled_tokens": 1, "time_ns": 2577638955141028}

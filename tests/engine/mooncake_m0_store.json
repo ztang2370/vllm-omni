@@ -1,0 +1,10 @@
+{
+  "metadata_server": "http://127.0.0.1:8080/metadata",
+  "master_server_address": "127.0.0.1:50051",
+  "protocol": "tcp",
+  "device_name": "",
+  "mode": "embedded",
+  "global_segment_size": "512MB",
+  "local_buffer_size": "128MB",
+  "enable_offload": false
+}

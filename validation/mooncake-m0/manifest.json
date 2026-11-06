@@ -1,0 +1,22 @@
+{
+  "artifact_sha256": {
+    "cpu-tests.log": "b3b5439ce54307cc8eb37c6e3efa82dc148fb88fecbf2af38c00818f0a0a7a51",
+    "master-version.log": "e37470b7c11b25dbfcdba4bd6e4ca9013bdb5f112ad35b34b1ce50600816def8",
+    "packages.txt": "546ff742eeb7d33db9686141b76f65354097f3097943ea53de5ae9d685a71a9c",
+    "qwen/events/scheduler-1620988.jsonl": "b0be19ab524a441d8afa06c601c9dc0a729dca2bb7a3dd0bc77b1b1feeaeea24",
+    "qwen/events/worker-1620988.jsonl": "21e2874a2d6c285af98d83be4c7412d7f6df76fb59f9ef9b88a94d2da0be5c30",
+    "qwen/report.json": "aaf91d9f8fe43ab059a9dda537b54f7b929bf9cfd1408d76832321a654cd2ac7",
+    "store-report.json": "2d760f28f816f17f5ce6259768e55015f257b3b40e1f398c011f24df2f04e4ec"
+  },
+  "source_sha256": {
+    "tests/core/sched/test_omni_ar_scheduler_kv_load.py": "8ad108561d6a89685cd156e47f2e737313f25334cefd3bcc9be9ca899104c85f",
+    "tests/engine/mooncake_m0_connector.py": "d8c1c0ef11d89ed1b263b6d35e86d12dc48f0f6dc029d45a16c571dd342e3550",
+    "tests/engine/mooncake_m0_probe.py": "a771c87ff66292229503f2e743caca1f1c3640775954433985e10be012f999fc",
+    "tests/engine/mooncake_m0_store.json": "7cdfaa1637ddd4cf9e45228c7791b3461dec76b6b1408782ca10b230dbf4641f",
+    "tests/engine/mooncake_m0_store_probe.py": "333f73d50cef45c2c3c9a2bcf52e585fc39841e82449a431aa900205d536caa7",
+    "tests/engine/test_mooncake_m0_capture.py": "acc81808902ebd7016e72b86ab2710e62a48793682ca9aec625e6bb8e81a03e9",
+    "tests/engine/test_mooncake_m0_probe.py": "647eae2aa08a149ccd2236c4793b72689be8ade44bea53ea23ec43403265e736"
+  },
+  "test_commit": "dedce6e75dec46f85f677416735047865514b5d5",
+  "validated_base": "6e8c1097cd8c73ce799fd1d7f7cd32e656b29b28"
+}
